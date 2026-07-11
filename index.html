@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -19,53 +20,93 @@
 
 <body>
 
-<div class="background"></div>
+    <div class="background"></div>
 
-<!-- ================= LANDING ================= -->
+    <!-- ================= LANDING ================= -->
 
-<section id="landing" class="screen active">
+    <section id="landing" class="screen active">
 
-    <div class="landing-content">
+        <div class="landing-content">
 
-        <p class="subtitle">FOR</p>
+            <p class="small-title">
+                FOR
+            </p>
 
-        <h1>Kat</h1>
+            <h1>
+                Kat
+            </h1>
 
-        <p class="text">
-            There's something I'd like to share with you.
-        </p>
+            <p class="subtitle">
 
-        <p class="text light">
-            Whenever you're ready.
-        </p>
+                There's something I'd like to share with you.
 
-        <button id="openBtn">
-            Open
-        </button>
+            </p>
 
-    </div>
+            <p class="subtitle light">
 
-</section>
+                Whenever you're ready.
 
-<!-- ================= ENVELOPE ================= -->
+            </p>
 
-<section id="envelopeScene" class="screen">
+            <button id="openBtn">
 
-    <div class="envelope-wrapper">
+                Open
 
-        <div class="envelope" id="envelope">
+            </button>
 
-            <div class="flap"></div>
+        </div>
 
-            <div class="letter" id="letter">
+    </section>
 
-                <div class="paper">
+    <!-- ================= ENVELOPE ================= -->
 
-                    <div class="letter-content">
+    <section id="envelopeScene" class="screen">
 
-                        <h2>Dear Kat,</h2>
+        <div class="envelope-wrapper">
 
-                        <p>
+            <div class="envelope" id="envelope">
+
+                <div class="envelope-back"></div>
+
+                <div class="letter-preview"></div>
+
+                <div class="envelope-front"></div>
+
+                <div class="envelope-flap"></div>
+
+                <div class="seal" id="seal">
+
+                    BJDB
+
+                </div>
+
+            </div>
+
+            <p class="helperText">
+
+                Tap the seal
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= LETTER ================= -->
+
+    <section id="letterScene" class="screen">
+
+        <div class="paper">
+
+            <div class="paper-content">
+
+                <h2>
+
+                    Dear Kat,
+
+                </h2>
+
+                <p id="letterText">
 
 I made this because I wanted to try something creative, as someone na not creative? Hahaha it's explore and try lang. But it turned out to be pretty fun.
 
@@ -77,35 +118,104 @@ Since it's my birthday, I thought I'd ask if you'd like to celebrate with me if 
 
 But please don't feel pressured to say yes because of this or because it's my birthday. I know you've been carrying a lot lately. If you're not feeling up to it, that's completely okay. We can celebrate another time whenever you're ready.
 
-                        </p>
+                </p>
 
-                        <button id="continueBtn">
+                <button id="continueBtn">
 
-                            Continue →
+                    Continue →
 
-                        </button>
+                </button>
 
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="seal" id="seal">
-                ●
             </div>
 
         </div>
 
-        <p class="tap-text">
-            Tap the seal
-        </p>
+    </section>
 
-    </div>
+    <!-- ================= INVITATION ================= -->
 
-</section>
+    <section id="inviteScene" class="screen">
 
-<script src="script.js"></script>
+        <div class="invite-container">
+
+            <h2>
+
+                If you'd like to celebrate with me...
+
+            </h2>
+
+            <div class="card">
+
+                <h3>
+                    🌄 Pampanga Adventure
+                </h3>
+
+                <p>
+
+If you can take a leave, if you can and want lang ha, we can go to Pampanga from morning to afternoon and go home since it's birthday also of Jacobo and you might've birthday dinner with your family since it's Yomi's Birthday also.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+
+                    🌆 Dinner in Alabang
+
+                </h3>
+
+                <p>
+
+Have a date with me in Alabang after work, if you can and want. Baka ayun nga you have family dinner because of Yomi's Birthday.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+
+                    🌿 Whenever You're Ready
+
+                </h3>
+
+                <p>
+
+We can celebrate next time and that's totally okay.
+
+                </p>
+
+            </div>
+
+            <div class="ending">
+
+                <p>
+
+No matter which option feels right,
+
+<br><br>
+
+thank you for taking the time
+to read this.
+
+                </p>
+
+                <h4>
+
+                    — BJDB
+
+                </h4>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
 
 </body>
 
