@@ -1,5 +1,13 @@
 const openBtn = document.getElementById("openBtn");
 
-openBtn.addEventListener("click", () => {
-    alert("It works! 🎉");
+const landing = document.getElementById("landing");
+
+const envelope = document.getElementById("envelope");
+
+openBtn.addEventListener("click",function(){
+
+landing.style.display="none";
+
+envelope.style.display="flex";
+
 });
