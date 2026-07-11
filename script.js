@@ -1,7 +1,15 @@
-const button = document.getElementById("beginButton");
+const landing=document.getElementById("landing");
 
-button.addEventListener("click", () => {
+const envelope=document.getElementById("envelopeScreen");
 
-    button.innerHTML = "Coming Soon 🌷";
+document.getElementById("openButton").onclick=()=>{
 
-});
+landing.classList.add("hidden");
+
+setTimeout(()=>{
+
+envelope.classList.remove("hidden");
+
+},900);
+
+};
