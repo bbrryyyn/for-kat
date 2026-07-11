@@ -1,6 +1,4 @@
-// =====================
-// Elements
-// =====================
+// ===== Elements =====
 
 const landing = document.getElementById("landing");
 const envelopeScene = document.getElementById("envelopeScene");
@@ -8,73 +6,46 @@ const letterScene = document.getElementById("letterScene");
 const inviteScene = document.getElementById("inviteScene");
 
 const openBtn = document.getElementById("openBtn");
-const envelope = document.getElementById("envelope");
 const seal = document.getElementById("seal");
 const continueBtn = document.getElementById("continueBtn");
 
 
-// =====================
-// Open Button
-// =====================
+// ===== Open Landing =====
 
-openBtn.addEventListener("click", () => {
+openBtn.onclick = function(){
 
     landing.classList.remove("active");
 
-    setTimeout(() => {
+    envelopeScene.classList.add("active");
 
-        envelopeScene.classList.add("active");
-
-    }, 600);
-
-});
+};
 
 
-// =====================
-// Open Envelope
-// =====================
+// ===== Open Envelope =====
 
-seal.addEventListener("click", () => {
+seal.onclick = function(){
 
-    // Open the flap
-    const flap = document.querySelector(".envelope-flap");
+    document.querySelector(".envelope-flap").style.transform="rotateX(180deg)";
 
-    flap.style.transform = "rotateX(180deg)";
+    seal.style.display="none";
 
-    // Hide seal
-    seal.style.opacity = "0";
-
-    // Fade out envelope
-    setTimeout(() => {
-
-        envelope.style.opacity = "0";
-        document.querySelector(".helperText").style.opacity = "0";
-
-    }, 900);
-
-    // Show letter
-    setTimeout(() => {
+    setTimeout(function(){
 
         envelopeScene.classList.remove("active");
+
         letterScene.classList.add("active");
 
-    }, 1500);
+    },1000);
 
-});
+};
 
 
-// =====================
-// Continue
-// =====================
+// ===== Continue =====
 
-continueBtn.addEventListener("click", () => {
+continueBtn.onclick=function(){
 
     letterScene.classList.remove("active");
 
-    setTimeout(() => {
+    inviteScene.classList.add("active");
 
-        inviteScene.classList.add("active");
-
-    }, 500);
-
-});
+};
