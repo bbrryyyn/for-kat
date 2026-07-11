@@ -97,33 +97,53 @@ border-top:100px solid #e2cfbb;
 }
 
 .seal{
-
 position:absolute;
-
 left:50%;
-
 top:80px;
-
 transform:translateX(-50%);
-
 width:60px;
-
 height:60px;
-
 border-radius:50%;
-
 background:#b87d8d;
-
 color:white;
-
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
 font-size:11px;
-
 font-weight:bold;
+cursor:pointer;
+}
+
+.paper{
+
+width:700px;
+
+max-width:90%;
+
+background:white;
+
+padding:50px;
+
+border-radius:16px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+}
+
+.paper h2{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:48px;
+
+margin-bottom:25px;
+
+}
+
+.paper p{
+
+line-height:2;
+
+font-size:18px;
 
 }
