@@ -1,18 +1,26 @@
+// =====================
+// Elements
+// =====================
+
 const landing = document.getElementById("landing");
 const envelopeScene = document.getElementById("envelopeScene");
+const letterScene = document.getElementById("letterScene");
+const inviteScene = document.getElementById("inviteScene");
 
 const openBtn = document.getElementById("openBtn");
 const envelope = document.getElementById("envelope");
 const seal = document.getElementById("seal");
+const continueBtn = document.getElementById("continueBtn");
 
-const tapText = document.querySelector(".tap-text");
+
+// =====================
+// Open Button
+// =====================
 
 openBtn.addEventListener("click", () => {
 
-    // Fade out landing
     landing.classList.remove("active");
 
-    // Show envelope after fade
     setTimeout(() => {
 
         envelopeScene.classList.add("active");
@@ -21,15 +29,52 @@ openBtn.addEventListener("click", () => {
 
 });
 
+
+// =====================
+// Open Envelope
+// =====================
+
 seal.addEventListener("click", () => {
 
-    envelope.classList.add("open");
+    // Open the flap
+    const flap = document.querySelector(".envelope-flap");
 
-    // Remove seal after opening
+    flap.style.transform = "rotateX(180deg)";
+
+    // Hide seal
     seal.style.opacity = "0";
-    seal.style.pointerEvents = "none";
 
-    // Update helper text
-    tapText.innerHTML = "Take your time.";
+    // Fade out envelope
+    setTimeout(() => {
+
+        envelope.style.opacity = "0";
+        document.querySelector(".helperText").style.opacity = "0";
+
+    }, 900);
+
+    // Show letter
+    setTimeout(() => {
+
+        envelopeScene.classList.remove("active");
+        letterScene.classList.add("active");
+
+    }, 1500);
+
+});
+
+
+// =====================
+// Continue
+// =====================
+
+continueBtn.addEventListener("click", () => {
+
+    letterScene.classList.remove("active");
+
+    setTimeout(() => {
+
+        inviteScene.classList.add("active");
+
+    }, 500);
 
 });
