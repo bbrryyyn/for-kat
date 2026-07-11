@@ -1,15 +1,10 @@
-const landing=document.getElementById("landing");
+const landing = document.getElementById("landing");
+const envelope = document.getElementById("envelopeScreen");
 
-const envelope=document.getElementById("envelopeScreen");
+document.getElementById("openButton").onclick = () => {
+    landing.classList.add("hidden");
 
-document.getElementById("openButton").onclick=()=>{
-
-landing.classList.add("hidden");
-
-setTimeout(()=>{
-
-envelope.classList.remove("hidden");
-
-},900);
-
+    setTimeout(() => {
+        envelope.classList.remove("hidden");
+    }, 900);
 };
