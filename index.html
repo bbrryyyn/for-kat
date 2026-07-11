@@ -3,110 +3,89 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>For Kat</title>
+<title>For Kat</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <div class="background"></div>
+<div class="background"></div>
 
-    <!-- ================= LANDING ================= -->
+<!-- ================= LANDING ================= -->
 
-    <section id="landing" class="screen active">
+<section id="landing" class="page">
 
-        <div class="landing-content">
+    <div class="content">
 
-            <p class="small-title">
-                FOR
-            </p>
+        <p class="small">
+            FOR
+        </p>
 
-            <h1>
-                Kat
-            </h1>
+        <h1>Kat</h1>
 
-            <p class="subtitle">
+        <p class="subtitle">
+            There's something I'd like to share with you.
+        </p>
 
-                There's something I'd like to share with you.
+        <p class="subtitle light">
+            Whenever you're ready.
+        </p>
 
-            </p>
+        <button id="openBtn">
+            Open
+        </button>
 
-            <p class="subtitle light">
+    </div>
 
-                Whenever you're ready.
+</section>
 
-            </p>
+<!-- ================= ENVELOPE ================= -->
 
-            <button id="openBtn">
+<section id="envelope" class="page hidden">
 
-                Open
+    <div class="envelope-wrapper">
 
-            </button>
+        <div class="mail">
 
-        </div>
+            <div class="back"></div>
 
-    </section>
+            <div class="front"></div>
 
-    <!-- ================= ENVELOPE ================= -->
+            <div class="flap"></div>
 
-    <section id="envelopeScene" class="screen">
-
-        <div class="envelope-wrapper">
-
-            <div class="envelope" id="envelope">
-
-                <div class="envelope-back"></div>
-
-                <div class="letter-preview"></div>
-
-                <div class="envelope-front"></div>
-
-                <div class="envelope-flap"></div>
-
-                <div class="seal" id="seal">
-
-                    BJDB
-
-                </div>
-
+            <div class="seal" id="seal">
+                BJDB
             </div>
 
-            <p class="helperText">
-
-                Tap the seal
-
-            </p>
-
         </div>
 
-    </section>
+        <p class="helper">
+            Tap the seal
+        </p>
 
-    <!-- ================= LETTER ================= -->
+    </div>
 
-    <section id="letterScene" class="screen">
+</section>
 
-        <div class="paper">
+<!-- ================= LETTER ================= -->
 
-            <div class="paper-content">
+<section id="letter" class="page hidden">
 
-                <h2>
+    <div class="paper">
 
-                    Dear Kat,
+        <h2>Dear Kat,</h2>
 
-                </h2>
-
-                <p id="letterText">
+        <p>
 
 I made this because I wanted to try something creative, as someone na not creative? Hahaha it's explore and try lang. But it turned out to be pretty fun.
 
@@ -118,81 +97,67 @@ Since it's my birthday, I thought I'd ask if you'd like to celebrate with me if 
 
 But please don't feel pressured to say yes because of this or because it's my birthday. I know you've been carrying a lot lately. If you're not feeling up to it, that's completely okay. We can celebrate another time whenever you're ready.
 
-                </p>
+        </p>
 
-                <button id="continueBtn">
+        <button id="continueBtn">
 
-                    Continue →
+            Continue →
 
-                </button>
+        </button>
 
-            </div>
+    </div>
 
-        </div>
+</section>
 
-    </section>
+<!-- ================= INVITATION ================= -->
 
-    <!-- ================= INVITATION ================= -->
+<section id="invite" class="page hidden">
 
-    <section id="inviteScene" class="screen">
+    <div class="invite">
 
-        <div class="invite-container">
+        <h2>
+            If you'd like to celebrate with me...
+        </h2>
 
-            <h2>
+        <div class="card">
 
-                If you'd like to celebrate with me...
+            <h3>🌄 Pampanga Adventure</h3>
 
-            </h2>
-
-            <div class="card">
-
-                <h3>
-                    🌄 Pampanga Adventure
-                </h3>
-
-                <p>
+            <p>
 
 If you can take a leave, if you can and want lang ha, we can go to Pampanga from morning to afternoon and go home since it's birthday also of Jacobo and you might've birthday dinner with your family since it's Yomi's Birthday also.
 
-                </p>
+            </p>
 
-            </div>
+        </div>
 
-            <div class="card">
+        <div class="card">
 
-                <h3>
+            <h3>🌆 Dinner in Alabang</h3>
 
-                    🌆 Dinner in Alabang
-
-                </h3>
-
-                <p>
+            <p>
 
 Have a date with me in Alabang after work, if you can and want. Baka ayun nga you have family dinner because of Yomi's Birthday.
 
-                </p>
+            </p>
 
-            </div>
+        </div>
 
-            <div class="card">
+        <div class="card">
 
-                <h3>
+            <h3>🌿 Whenever You're Ready</h3>
 
-                    🌿 Whenever You're Ready
-
-                </h3>
-
-                <p>
+            <p>
 
 We can celebrate next time and that's totally okay.
 
-                </p>
+            </p>
 
-            </div>
+        </div>
 
-            <div class="ending">
+        <div class="ending">
 
-                <p>
+            <p>
 
 No matter which option feels right,
 
@@ -201,22 +166,21 @@ No matter which option feels right,
 thank you for taking the time
 to read this.
 
-                </p>
+            </p>
 
-                <h4>
+            <h4>
 
-                    — BJDB
+— BJDB
 
-                </h4>
-
-            </div>
+            </h4>
 
         </div>
 
-    </section>
+    </div>
 
-    <script src="script.js"></script>
+</section>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
