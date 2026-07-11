@@ -1,51 +1,58 @@
-// ===== Elements =====
+// ======================
+// Get Pages
+// ======================
 
 const landing = document.getElementById("landing");
-const envelopeScene = document.getElementById("envelopeScene");
-const letterScene = document.getElementById("letterScene");
-const inviteScene = document.getElementById("inviteScene");
+const envelope = document.getElementById("envelope");
+const letter = document.getElementById("letter");
+const invite = document.getElementById("invite");
+
+// ======================
+// Get Buttons
+// ======================
 
 const openBtn = document.getElementById("openBtn");
 const seal = document.getElementById("seal");
 const continueBtn = document.getElementById("continueBtn");
 
+// ======================
+// Open Button
+// ======================
 
-// ===== Open Landing =====
+openBtn.addEventListener("click", function () {
 
-openBtn.onclick = function(){
+    landing.classList.add("hidden");
 
-    landing.classList.remove("active");
+    envelope.classList.remove("hidden");
 
-    envelopeScene.classList.add("active");
+});
 
-};
+// ======================
+// Open Envelope
+// ======================
 
+seal.addEventListener("click", function () {
 
-// ===== Open Envelope =====
+    document.querySelector(".flap").style.transform = "rotateX(180deg)";
 
-seal.onclick = function(){
+    setTimeout(function () {
 
-    document.querySelector(".envelope-flap").style.transform="rotateX(180deg)";
+        envelope.classList.add("hidden");
 
-    seal.style.display="none";
+        letter.classList.remove("hidden");
 
-    setTimeout(function(){
+    }, 700);
 
-        envelopeScene.classList.remove("active");
+});
 
-        letterScene.classList.add("active");
+// ======================
+// Continue
+// ======================
 
-    },1000);
+continueBtn.addEventListener("click", function () {
 
-};
+    letter.classList.add("hidden");
 
+    invite.classList.remove("hidden");
 
-// ===== Continue =====
-
-continueBtn.onclick=function(){
-
-    letterScene.classList.remove("active");
-
-    inviteScene.classList.add("active");
-
-};
+});
