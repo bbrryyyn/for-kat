@@ -4,50 +4,31 @@ padding:0;
 box-sizing:border-box;
 }
 
-:root{
---bg:#f7f3ed;
---paper:#fffdf9;
---cream:#efe2d3;
---cream-dark:#e2cfbb;
---accent:#b87d8d;
---text:#433936;
---shadow:0 20px 45px rgba(0,0,0,.12);
-}
-
-html,body{
-width:100%;
-height:100%;
-overflow:hidden;
+body{
 font-family:Inter,sans-serif;
-background:var(--bg);
-color:var(--text);
+background:#f7f3ed;
+color:#433936;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
 }
 
 .background{
 position:fixed;
 inset:0;
-background:radial-gradient(circle at top,#fffefb,#f7f3ed 75%);
+background:radial-gradient(circle at top,#fffefc,#f7f3ed 70%);
 z-index:-1;
 }
 
-.page{
-
+#landing{
 width:100%;
-height:100vh;
-
 display:flex;
 justify-content:center;
 align-items:center;
-
 padding:30px;
-
 }
-
-.hidden{
-display:none;
-}
-
-/* ---------- Landing ---------- */
 
 .content{
 text-align:center;
@@ -79,7 +60,7 @@ margin-bottom:45px;
 }
 
 button{
-background:var(--accent);
+background:#b87d8d;
 color:white;
 border:none;
 padding:15px 40px;
@@ -93,220 +74,14 @@ button:hover{
 transform:translateY(-2px);
 }
 
-/* ---------- Envelope ---------- */
-
-.envelope-wrapper{
-text-align:center;
-}
-
-.mail{
-position:relative;
-width:340px;
-height:220px;
-margin:auto;
-}
-
-.back{
-position:absolute;
-bottom:0;
-width:100%;
-height:170px;
-background:var(--cream);
-border-radius:0 0 12px 12px;
-box-shadow:var(--shadow);
-}
-
-.front{
-position:absolute;
-bottom:0;
-width:100%;
-height:170px;
-background:var(--cream);
-clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);
-z-index:2;
-}
-
-.flap{
-position:absolute;
-top:0;
-border-left:170px solid transparent;
-border-right:170px solid transparent;
-border-top:110px solid var(--cream-dark);
-transform-origin:top;
-transition:.8s;
-z-index:3;
-}
-
-.seal{
-position:absolute;
-left:50%;
-top:80px;
-transform:translateX(-50%);
-width:60px;
-height:60px;
-border-radius:50%;
-background:#b86e82;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:11px;
-font-weight:600;
-letter-spacing:1px;
-cursor:pointer;
-z-index:4;
-box-shadow:0 8px 20px rgba(0,0,0,.15);
-}
-
-.helper{
-margin-top:35px;
-opacity:.6;
-}
-
-/* ---------- Letter ---------- */
-
-.paper{
-
-width:min(760px,90vw);
-
-max-height:85vh;
-
-overflow:auto;
-
-background:var(--paper);
-
-padding:45px;
-
-border-radius:16px;
-
-box-shadow:var(--shadow);
-
-}
-
-.paper h2{
-
-font-family:"Cormorant Garamond",serif;
-
-font-size:46px;
-
-margin-bottom:25px;
-
-}
-
-.paper p{
-
-line-height:2;
-
-font-size:17px;
-
-}
-
-#continueBtn{
-
-margin-top:35px;
-
-width:100%;
-
-}
-
-/* ---------- Invitation ---------- */
-
-.invite{
-
-max-width:850px;
-
-width:100%;
-
-max-height:85vh;
-
-overflow:auto;
-
-}
-
-.invite h2{
-
-font-family:"Cormorant Garamond",serif;
-
-font-size:50px;
-
-text-align:center;
-
-margin-bottom:35px;
-
-}
-
-.card{
-
-background:white;
-
-padding:30px;
-
-border-radius:16px;
-
-margin-bottom:20px;
-
-box-shadow:var(--shadow);
-
-}
-
-.card h3{
-
-font-family:"Cormorant Garamond",serif;
-
-font-size:30px;
-
-margin-bottom:15px;
-
-}
-
-.card p{
-
-line-height:1.8;
-
-}
-
-.ending{
-
-text-align:center;
-
-padding:40px 0;
-
-}
-
-.ending h4{
-
-font-family:"Cormorant Garamond",serif;
-
-font-size:36px;
-
-margin-top:25px;
-
-}
-
 @media(max-width:768px){
 
 h1{
-font-size:62px;
+font-size:60px;
 }
 
 .subtitle{
 font-size:18px;
-}
-
-.mail{
-transform:scale(.85);
-}
-
-.paper{
-padding:30px;
-}
-
-.paper p{
-font-size:16px;
-}
-
-.invite h2{
-font-size:36px;
 }
 
 }
