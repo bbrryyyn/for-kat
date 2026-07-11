@@ -8,11 +8,11 @@ body{
 
 font-family:Inter,sans-serif;
 
-background:#f8f4ef;
+background:#f7f3ee;
 
 overflow:hidden;
 
-color:#473c38;
+color:#4a3f3b;
 
 }
 
@@ -26,13 +26,19 @@ height:100%;
 
 background:
 
-radial-gradient(circle at top,#fffdf9,#f8f4ef 70%);
+radial-gradient(circle at top,#fffdfb,#f7f3ee 70%);
 
 z-index:-2;
 
+animation:moveLight 10s infinite alternate;
+
 }
 
-.hero{
+.screen{
+
+position:absolute;
+
+width:100%;
 
 height:100vh;
 
@@ -42,31 +48,33 @@ justify-content:center;
 
 align-items:center;
 
-text-align:center;
+transition:1s;
 
-padding:30px;
+}
 
-animation:fadeIn 2s ease;
+.hidden{
+
+opacity:0;
+
+pointer-events:none;
 
 }
 
 .content{
 
-max-width:700px;
+text-align:center;
 
 }
 
 .small{
 
-letter-spacing:8px;
-
-text-transform:uppercase;
+letter-spacing:10px;
 
 font-size:13px;
 
-opacity:.6;
+opacity:.5;
 
-margin-bottom:15px;
+margin-bottom:20px;
 
 }
 
@@ -74,7 +82,7 @@ h1{
 
 font-family:"Cormorant Garamond",serif;
 
-font-size:88px;
+font-size:92px;
 
 font-weight:600;
 
@@ -86,59 +94,125 @@ margin-bottom:20px;
 
 font-size:22px;
 
-margin-bottom:12px;
-
-font-weight:300;
+margin-bottom:10px;
 
 }
 
 .message2{
 
-opacity:.65;
+opacity:.6;
 
-margin-bottom:50px;
-
-font-size:18px;
+margin-bottom:45px;
 
 }
 
 button{
 
-padding:16px 42px;
+padding:16px 46px;
 
 border:none;
 
-border-radius:50px;
+border-radius:40px;
 
-background:#c99ca7;
+background:#c99aa8;
 
 color:white;
 
-font-size:16px;
+font-size:17px;
 
 cursor:pointer;
 
-transition:.3s;
+transition:.35s;
 
 }
 
 button:hover{
 
-transform:translateY(-3px);
-
-background:#b88794;
+transform:translateY(-4px);
 
 }
 
-@keyframes fadeIn{
-
-from{
+.fade{
 
 opacity:0;
 
 transform:translateY(20px);
 
+animation:fadeUp .9s forwards;
+
 }
+
+.delay1{animation-delay:.3s;}
+.delay2{animation-delay:.8s;}
+.delay3{animation-delay:1.3s;}
+.delay4{animation-delay:1.8s;}
+.delay5{animation-delay:2.3s;}
+
+.envelopeContainer{
+
+text-align:center;
+
+}
+
+.envelope{
+
+position:relative;
+
+width:320px;
+
+height:210px;
+
+cursor:pointer;
+
+}
+
+.body{
+
+position:absolute;
+
+bottom:0;
+
+width:100%;
+
+height:170px;
+
+background:#f2e5d5;
+
+border-radius:8px;
+
+box-shadow:0 25px 60px rgba(0,0,0,.15);
+
+}
+
+.flap{
+
+position:absolute;
+
+top:0;
+
+width:0;
+
+height:0;
+
+border-left:160px solid transparent;
+
+border-right:160px solid transparent;
+
+border-top:110px solid #e7d3bf;
+
+transform-origin:top;
+
+}
+
+.tapText{
+
+margin-top:40px;
+
+opacity:.55;
+
+}
+
+@keyframes fadeUp{
 
 to{
 
@@ -150,17 +224,33 @@ transform:translateY(0);
 
 }
 
+@keyframes moveLight{
+
+from{
+
+filter:brightness(1);
+
+}
+
+to{
+
+filter:brightness(1.05);
+
+}
+
+}
+
 @media(max-width:700px){
 
 h1{
 
-font-size:58px;
+font-size:64px;
 
 }
 
-.message{
+.envelope{
 
-font-size:19px;
+transform:scale(.8);
 
 }
 
