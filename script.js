@@ -7,66 +7,88 @@ const openBtn = document.getElementById("openBtn");
 const seal = document.getElementById("seal");
 const continueBtn = document.getElementById("continueBtn");
 
-// ----------------------------
-// Smooth Page Transition
-// ----------------------------
+const letterText = document.getElementById("letterText");
 
-function switchPage(current, next) {
+const fullLetter = `I made this because I wanted to try something creative, as someone na not creative? Hahaha it's explore and try lang. But it turned out to be pretty fun.
 
-    // Fade out current page
-    current.style.opacity = "0";
+Since it's my birthday, I thought I'd ask if you'd like to celebrate with me if you're up for it.
 
-    setTimeout(() => {
+But please don't feel pressured to say yes because of this or because it's my birthday. I know you've been carrying a lot lately. If you're not feeling up to it, that's completely okay. We can celebrate another time whenever you're ready.`;
 
-        current.style.display = "none";
+function switchPage(current, next){
 
-        // Prepare next page
-        next.style.display = "flex";
-        next.style.opacity = "0";
+    current.style.opacity="0";
 
-        // Wait one frame so CSS can animate
-        requestAnimationFrame(() => {
-            next.style.opacity = "1";
+    setTimeout(()=>{
+
+        current.style.display="none";
+
+        next.style.display="flex";
+
+        next.style.opacity="0";
+
+        requestAnimationFrame(()=>{
+
+            next.style.opacity="1";
+
         });
 
-    }, 400);
+    },400);
 
 }
 
-// ----------------------------
-// Landing → Envelope
-// ----------------------------
+function typeLetter(){
 
-openBtn.addEventListener("click", () => {
+    letterText.innerHTML="";
 
-    switchPage(landing, envelope);
+    continueBtn.style.display="none";
 
-});
+    const words = fullLetter.split(" ");
 
-// ----------------------------
-// Envelope → Letter
-// ----------------------------
+    let index = 0;
 
-seal.addEventListener("click", () => {
+    const timer = setInterval(()=>{
 
-    document.querySelector(".flap").style.transform = "rotateX(180deg)";
+        letterText.innerHTML += words[index] + " ";
 
-    seal.style.display = "none";
+        index++;
 
-    setTimeout(() => {
+        if(index >= words.length){
 
-        switchPage(envelope, letter);
+            clearInterval(timer);
 
-    }, 500);
+            continueBtn.style.display="block";
 
-});
+        }
 
-// ----------------------------
-// Letter → Invitation
-// ----------------------------
+    },120);
 
-continueBtn.addEventListener("click", () => {
+}
 
-    switchPage(letter, invite);
+openBtn.onclick=function(){
 
-});
+    switchPage(landing,envelope);
+
+};
+
+seal.onclick=function(){
+
+    document.querySelector(".flap").style.transform="rotateX(180deg)";
+
+    seal.style.display="none";
+
+    setTimeout(()=>{
+
+        switchPage(envelope,letter);
+
+        setTimeout(typeLetter,500);
+
+    },500);
+
+};
+
+continueBtn.onclick=function(){
+
+    switchPage(letter,invite);
+
+};
