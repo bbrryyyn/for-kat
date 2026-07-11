@@ -7,20 +7,17 @@ box-sizing:border-box;
 :root{
 --bg:#f7f3ed;
 --paper:#fffdf9;
---cream:#efe1d0;
---cream-dark:#e3cfb8;
+--cream:#efe2d3;
+--cream-dark:#e2cfbb;
+--accent:#b87d8d;
 --text:#433936;
---accent:#b87a8f;
---shadow:0 25px 60px rgba(0,0,0,.12);
+--shadow:0 20px 45px rgba(0,0,0,.12);
 }
 
 html,body{
 width:100%;
 height:100%;
 overflow:hidden;
-}
-
-body{
 font-family:Inter,sans-serif;
 background:var(--bg);
 color:var(--text);
@@ -29,247 +26,274 @@ color:var(--text);
 .background{
 position:fixed;
 inset:0;
-background:
-radial-gradient(circle at top,#fffefc,#f7f3ed 70%);
-z-index:-10;
-animation:bgMove 10s ease-in-out infinite alternate;
+background:radial-gradient(circle at top,#fffefb,#f7f3ed 75%);
+z-index:-1;
 }
 
-.screen{
-position:absolute;
-inset:0;
+.page{
+
+width:100%;
+height:100vh;
+
 display:flex;
 justify-content:center;
 align-items:center;
-opacity:0;
-pointer-events:none;
-transition:.8s;
+
 padding:30px;
+
 }
 
-.screen.active{
-opacity:1;
-pointer-events:auto;
+.hidden{
+display:none;
 }
 
-.landing-content{
+/* ---------- Landing ---------- */
+
+.content{
 text-align:center;
 max-width:650px;
 }
 
-.small-title{
+.small{
 letter-spacing:10px;
 font-size:13px;
 opacity:.5;
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
 h1{
 font-family:"Cormorant Garamond",serif;
-font-size:92px;
+font-size:90px;
 font-weight:600;
 margin-bottom:20px;
 }
 
 .subtitle{
-font-size:23px;
-margin-bottom:14px;
+font-size:22px;
+margin-bottom:10px;
 }
 
 .light{
 opacity:.6;
-margin-bottom:50px;
+margin-bottom:45px;
 }
 
 button{
-border:none;
 background:var(--accent);
 color:white;
+border:none;
 padding:15px 40px;
-border-radius:50px;
+border-radius:40px;
 cursor:pointer;
 font-size:16px;
-transition:.3s;
+transition:.25s;
 }
 
 button:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(0,0,0,.15);
+transform:translateY(-2px);
 }
 
-/* ---------------- ENVELOPE ---------------- */
+/* ---------- Envelope ---------- */
 
 .envelope-wrapper{
-display:flex;
-flex-direction:column;
-align-items:center;
+text-align:center;
 }
 
-.envelope{
+.mail{
 position:relative;
-width:360px;
-height:240px;
-cursor:pointer;
+width:340px;
+height:220px;
+margin:auto;
 }
 
-.envelope-back{
+.back{
 position:absolute;
 bottom:0;
 width:100%;
-height:180px;
+height:170px;
 background:var(--cream);
 border-radius:0 0 12px 12px;
 box-shadow:var(--shadow);
 }
 
-.envelope-front{
+.front{
 position:absolute;
 bottom:0;
 width:100%;
-height:180px;
+height:170px;
 background:var(--cream);
 clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);
-border-radius:0 0 12px 12px;
-z-index:4;
+z-index:2;
 }
 
-.envelope-flap{
+.flap{
 position:absolute;
 top:0;
-width:0;
-height:0;
-border-left:180px solid transparent;
-border-right:180px solid transparent;
-border-top:120px solid var(--cream-dark);
+border-left:170px solid transparent;
+border-right:170px solid transparent;
+border-top:110px solid var(--cream-dark);
 transform-origin:top;
-transition:1s ease;
-z-index:5;
+transition:.8s;
+z-index:3;
 }
 
 .seal{
 position:absolute;
 left:50%;
-top:90px;
+top:80px;
 transform:translateX(-50%);
 width:60px;
 height:60px;
-background:#b46c81;
 border-radius:50%;
+background:#b86e82;
+color:white;
 display:flex;
 justify-content:center;
 align-items:center;
-color:white;
 font-size:11px;
 font-weight:600;
 letter-spacing:1px;
-z-index:10;
+cursor:pointer;
+z-index:4;
 box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
-.helperText{
-margin-top:40px;
-opacity:.55;
-font-size:15px;
+.helper{
+margin-top:35px;
+opacity:.6;
 }
 
-/* ---------------- LETTER ---------------- */
+/* ---------- Letter ---------- */
 
 .paper{
-width:min(760px,90vw);
-height:min(85vh,850px);
-background:var(--paper);
-border-radius:18px;
-box-shadow:var(--shadow);
-overflow:auto;
-padding:50px;
-display:flex;
-}
 
-.paper-content{
-width:100%;
+width:min(760px,90vw);
+
+max-height:85vh;
+
+overflow:auto;
+
+background:var(--paper);
+
+padding:45px;
+
+border-radius:16px;
+
+box-shadow:var(--shadow);
+
 }
 
 .paper h2{
+
 font-family:"Cormorant Garamond",serif;
-font-size:48px;
-margin-bottom:30px;
+
+font-size:46px;
+
+margin-bottom:25px;
+
 }
 
 .paper p{
-font-size:18px;
+
 line-height:2;
+
+font-size:17px;
+
 }
 
 #continueBtn{
-margin-top:40px;
+
+margin-top:35px;
+
 width:100%;
+
 }
 
-/* ---------------- INVITATION ---------------- */
+/* ---------- Invitation ---------- */
 
-.invite-container{
-max-width:900px;
+.invite{
+
+max-width:850px;
+
 width:100%;
+
+max-height:85vh;
+
 overflow:auto;
-padding:20px;
+
 }
 
-.invite-container h2{
+.invite h2{
+
 font-family:"Cormorant Garamond",serif;
-font-size:52px;
+
+font-size:50px;
+
 text-align:center;
-margin-bottom:40px;
+
+margin-bottom:35px;
+
 }
 
 .card{
+
 background:white;
-border-radius:18px;
+
 padding:30px;
-margin-bottom:25px;
+
+border-radius:16px;
+
+margin-bottom:20px;
+
 box-shadow:var(--shadow);
+
 }
 
 .card h3{
-margin-bottom:15px;
-font-size:28px;
+
 font-family:"Cormorant Garamond",serif;
+
+font-size:30px;
+
+margin-bottom:15px;
+
 }
 
 .card p{
-line-height:1.9;
+
+line-height:1.8;
+
 }
 
 .ending{
+
 text-align:center;
-padding:50px 0;
+
+padding:40px 0;
+
 }
 
 .ending h4{
-margin-top:30px;
-font-family:"Cormorant Garamond",serif;
-font-size:40px;
-}
 
-@keyframes bgMove{
-from{
-filter:brightness(1);
-}
-to{
-filter:brightness(1.04);
-}
+font-family:"Cormorant Garamond",serif;
+
+font-size:36px;
+
+margin-top:25px;
+
 }
 
 @media(max-width:768px){
 
 h1{
-font-size:64px;
+font-size:62px;
 }
 
 .subtitle{
 font-size:18px;
 }
 
-.envelope{
+.mail{
 transform:scale(.85);
 }
 
@@ -281,8 +305,8 @@ padding:30px;
 font-size:16px;
 }
 
-.invite-container h2{
-font-size:38px;
+.invite h2{
+font-size:36px;
 }
 
 }
