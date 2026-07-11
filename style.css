@@ -5,253 +5,216 @@ box-sizing:border-box;
 }
 
 body{
-
 font-family:Inter,sans-serif;
-
-background:#f7f3ee;
-
+background:#f8f5f1;
+color:#4d443f;
 overflow:hidden;
-
-color:#4a3f3b;
-
 }
 
 .background{
-
 position:fixed;
-
-width:100%;
-
-height:100%;
-
+inset:0;
 background:
-
-radial-gradient(circle at top,#fffdfb,#f7f3ee 70%);
-
+radial-gradient(circle at top,#fffdfb,#f6f2ec 70%);
 z-index:-2;
-
-animation:moveLight 10s infinite alternate;
-
 }
 
 .screen{
-
 position:absolute;
-
-width:100%;
-
-height:100vh;
-
+inset:0;
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
-transition:1s;
-
-}
-
-.hidden{
-
 opacity:0;
-
 pointer-events:none;
-
+transition:opacity .8s ease;
 }
 
-.content{
+.screen.active{
+opacity:1;
+pointer-events:auto;
+}
 
+.landing-content{
 text-align:center;
-
+padding:30px;
+max-width:650px;
 }
 
-.small{
-
+.subtitle{
 letter-spacing:10px;
-
 font-size:13px;
-
-opacity:.5;
-
-margin-bottom:20px;
-
+opacity:.55;
+margin-bottom:12px;
 }
 
 h1{
-
 font-family:"Cormorant Garamond",serif;
-
-font-size:92px;
-
+font-size:88px;
 font-weight:600;
-
-margin-bottom:20px;
-
+margin-bottom:18px;
 }
 
-.message{
-
-font-size:22px;
-
-margin-bottom:10px;
-
+.text{
+font-size:21px;
+margin-bottom:12px;
 }
 
-.message2{
-
+.light{
 opacity:.6;
-
 margin-bottom:45px;
-
 }
 
 button{
-
-padding:16px 46px;
-
 border:none;
-
-border-radius:40px;
-
-background:#c99aa8;
-
+padding:15px 38px;
+border-radius:50px;
+background:#c996a5;
 color:white;
-
-font-size:17px;
-
+font-size:16px;
 cursor:pointer;
-
-transition:.35s;
-
+transition:.3s;
 }
 
 button:hover{
-
-transform:translateY(-4px);
-
+transform:translateY(-3px);
+background:#b88695;
 }
 
-.fade{
-
-opacity:0;
-
-transform:translateY(20px);
-
-animation:fadeUp .9s forwards;
-
-}
-
-.delay1{animation-delay:.3s;}
-.delay2{animation-delay:.8s;}
-.delay3{animation-delay:1.3s;}
-.delay4{animation-delay:1.8s;}
-.delay5{animation-delay:2.3s;}
-
-.envelopeContainer{
-
-text-align:center;
-
+.envelope-wrapper{
+display:flex;
+flex-direction:column;
+align-items:center;
 }
 
 .envelope{
-
 position:relative;
-
-width:320px;
-
-height:210px;
-
-cursor:pointer;
-
+width:340px;
+height:240px;
 }
 
 .body{
-
-position:absolute;
-
-bottom:0;
-
-width:100%;
-
-height:170px;
-
-background:#f2e5d5;
-
-border-radius:8px;
-
-box-shadow:0 25px 60px rgba(0,0,0,.15);
-
+display:none;
 }
 
 .flap{
-
 position:absolute;
-
 top:0;
-
+left:0;
 width:0;
-
 height:0;
-
-border-left:160px solid transparent;
-
-border-right:160px solid transparent;
-
-border-top:110px solid #e7d3bf;
-
+border-left:170px solid transparent;
+border-right:170px solid transparent;
+border-top:120px solid #e7d8c7;
 transform-origin:top;
-
+transition:1s;
+z-index:5;
 }
 
-.tapText{
+.envelope::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:340px;
+height:180px;
+background:#f1e5d7;
+border-radius:0 0 10px 10px;
+box-shadow:0 20px 50px rgba(0,0,0,.12);
+}
 
-margin-top:40px;
+.seal{
+position:absolute;
+left:50%;
+top:88px;
+transform:translateX(-50%);
+width:52px;
+height:52px;
+border-radius:50%;
+background:#b46d7f;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:24px;
+cursor:pointer;
+z-index:10;
+box-shadow:0 8px 20px rgba(0,0,0,.18);
+transition:.25s;
+}
 
+.seal:hover{
+transform:translateX(-50%) scale(1.08);
+}
+
+.letter{
+position:absolute;
+left:50%;
+bottom:18px;
+transform:translateX(-50%);
+width:290px;
+height:0;
+overflow:hidden;
+transition:1.2s;
+z-index:3;
+}
+
+.paper{
+background:#fffdf8;
+border-radius:8px;
+padding:30px;
+box-shadow:0 12px 40px rgba(0,0,0,.15);
+}
+
+.letter-content{
+opacity:0;
+transition:.8s;
+}
+
+.paper h2{
+font-family:"Cormorant Garamond",serif;
+margin-bottom:18px;
+font-size:36px;
+}
+
+.paper p{
+line-height:1.9;
+font-size:15px;
+}
+
+#continueBtn{
+margin-top:30px;
+display:block;
+width:100%;
+}
+
+.tap-text{
+margin-top:35px;
 opacity:.55;
-
+font-size:15px;
 }
 
-@keyframes fadeUp{
+.open .flap{
+transform:rotateX(180deg);
+}
 
-to{
+.open .letter{
+height:520px;
+bottom:70px;
+}
 
+.open .letter-content{
 opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-@keyframes moveLight{
-
-from{
-
-filter:brightness(1);
-
-}
-
-to{
-
-filter:brightness(1.05);
-
-}
-
 }
 
 @media(max-width:700px){
 
 h1{
-
-font-size:64px;
-
+font-size:62px;
 }
 
 .envelope{
-
-transform:scale(.8);
-
+transform:scale(.82);
 }
 
 }
