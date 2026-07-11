@@ -1,53 +1,50 @@
-// ======================
-// Elements
-// ======================
+const landing=document.getElementById("landing");
+const envelope=document.getElementById("envelope");
+const letter=document.getElementById("letter");
+const invite=document.getElementById("invite");
 
-const landing = document.getElementById("landing");
-const envelope = document.getElementById("envelope");
-const letter = document.getElementById("letter");
-const invite = document.getElementById("invite");
+const openBtn=document.getElementById("openBtn");
+const seal=document.getElementById("seal");
+const continueBtn=document.getElementById("continueBtn");
 
-const openBtn = document.getElementById("openBtn");
-const seal = document.getElementById("seal");
-const continueBtn = document.getElementById("continueBtn");
+function switchPage(current,next){
 
-// ======================
-// Landing -> Envelope
-// ======================
+current.classList.add("fadeOut");
 
-openBtn.addEventListener("click", function () {
+setTimeout(()=>{
 
-    landing.style.display = "none";
-    envelope.style.display = "flex";
+current.style.display="none";
 
-});
+next.style.display="flex";
 
-// ======================
-// Envelope -> Letter
-// ======================
+next.classList.add("fadeIn");
 
-seal.addEventListener("click", function () {
+},400);
 
-    // Small animation
-    document.querySelector(".flap").style.transform = "rotateX(180deg)";
-    seal.style.display = "none";
+}
 
-    setTimeout(function () {
+openBtn.onclick=function(){
 
-        envelope.style.display = "none";
-        letter.style.display = "flex";
+switchPage(landing,envelope);
 
-    }, 500);
+};
 
-});
+seal.onclick=function(){
 
-// ======================
-// Letter -> Invitation
-// ======================
+document.querySelector(".flap").style.transform="rotateX(180deg)";
 
-continueBtn.addEventListener("click", function () {
+seal.style.display="none";
 
-    letter.style.display = "none";
-    invite.style.display = "flex";
+setTimeout(()=>{
 
-});
+switchPage(envelope,letter);
+
+},500);
+
+};
+
+continueBtn.onclick=function(){
+
+switchPage(letter,invite);
+
+};
