@@ -3,17 +3,17 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For Kat 🌷</title>
+    <title>For Kat</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 </head>
 
@@ -21,59 +21,87 @@
 
 <div class="background"></div>
 
-<!-- LANDING -->
+<!-- ================= LANDING ================= -->
 
-<section id="landing" class="screen">
+<section id="landing" class="screen active">
 
-<div class="content">
+    <div class="landing-content">
 
-<p class="small fade delay1">FOR</p>
+        <p class="subtitle">FOR</p>
 
-<h1 class="fade delay2">Kat</h1>
+        <h1>Kat</h1>
 
-<p class="message fade delay3">
+        <p class="text">
+            There's something I'd like to share with you.
+        </p>
 
-There's something I'd like to share with you.
+        <p class="text light">
+            Whenever you're ready.
+        </p>
 
-</p>
+        <button id="openBtn">
+            Open
+        </button>
 
-<p class="message2 fade delay4">
-
-Whenever you're ready...
-
-</p>
-
-<button id="openButton" class="fade delay5">
-
-Open
-
-</button>
-
-</div>
+    </div>
 
 </section>
 
-<!-- ENVELOPE -->
+<!-- ================= ENVELOPE ================= -->
 
-<section id="envelopeScreen" class="screen hidden">
+<section id="envelopeScene" class="screen">
 
-<div class="envelopeContainer">
+    <div class="envelope-wrapper">
 
-<div class="envelope">
+        <div class="envelope" id="envelope">
 
-<div class="flap"></div>
+            <div class="flap"></div>
 
-<div class="body"></div>
+            <div class="letter" id="letter">
 
-</div>
+                <div class="paper">
 
-<p class="tapText">
+                    <div class="letter-content">
 
-Tap the envelope
+                        <h2>Dear Kat,</h2>
 
-</p>
+                        <p>
 
-</div>
+I made this because I wanted to try something creative, as someone na not creative? Hahaha it's explore and try lang. But it turned out to be pretty fun.
+
+<br><br>
+
+Since it's my birthday, I thought I'd ask if you'd like to celebrate with me if you're up for it.
+
+<br><br>
+
+But please don't feel pressured to say yes because of this or because it's my birthday. I know you've been carrying a lot lately. If you're not feeling up to it, that's completely okay. We can celebrate another time whenever you're ready.
+
+                        </p>
+
+                        <button id="continueBtn">
+
+                            Continue →
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="seal" id="seal">
+                ●
+            </div>
+
+        </div>
+
+        <p class="tap-text">
+            Tap the seal
+        </p>
+
+    </div>
 
 </section>
 
