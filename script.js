@@ -1,50 +1,72 @@
-const landing=document.getElementById("landing");
-const envelope=document.getElementById("envelope");
-const letter=document.getElementById("letter");
-const invite=document.getElementById("invite");
+const landing = document.getElementById("landing");
+const envelope = document.getElementById("envelope");
+const letter = document.getElementById("letter");
+const invite = document.getElementById("invite");
 
-const openBtn=document.getElementById("openBtn");
-const seal=document.getElementById("seal");
-const continueBtn=document.getElementById("continueBtn");
+const openBtn = document.getElementById("openBtn");
+const seal = document.getElementById("seal");
+const continueBtn = document.getElementById("continueBtn");
 
-function switchPage(current,next){
+// ----------------------------
+// Smooth Page Transition
+// ----------------------------
 
-current.classList.add("fadeOut");
+function switchPage(current, next) {
 
-setTimeout(()=>{
+    // Fade out current page
+    current.style.opacity = "0";
 
-current.style.display="none";
+    setTimeout(() => {
 
-next.style.display="flex";
+        current.style.display = "none";
 
-next.classList.add("fadeIn");
+        // Prepare next page
+        next.style.display = "flex";
+        next.style.opacity = "0";
 
-},400);
+        // Wait one frame so CSS can animate
+        requestAnimationFrame(() => {
+            next.style.opacity = "1";
+        });
+
+    }, 400);
 
 }
 
-openBtn.onclick=function(){
+// ----------------------------
+// Landing → Envelope
+// ----------------------------
 
-switchPage(landing,envelope);
+openBtn.addEventListener("click", () => {
 
-};
+    switchPage(landing, envelope);
 
-seal.onclick=function(){
+});
 
-document.querySelector(".flap").style.transform="rotateX(180deg)";
+// ----------------------------
+// Envelope → Letter
+// ----------------------------
 
-seal.style.display="none";
+seal.addEventListener("click", () => {
 
-setTimeout(()=>{
+    document.querySelector(".flap").style.transform = "rotateX(180deg)";
 
-switchPage(envelope,letter);
+    seal.style.display = "none";
 
-},500);
+    setTimeout(() => {
 
-};
+        switchPage(envelope, letter);
 
-continueBtn.onclick=function(){
+    }, 500);
 
-switchPage(letter,invite);
+});
 
-};
+// ----------------------------
+// Letter → Invitation
+// ----------------------------
+
+continueBtn.addEventListener("click", () => {
+
+    switchPage(letter, invite);
+
+});
