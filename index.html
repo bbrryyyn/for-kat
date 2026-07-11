@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>For Kat 🌷</title>
+<title>For Kat 🌷</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -20,37 +21,64 @@
 
 <div class="background"></div>
 
-<main class="hero">
+<!-- LANDING -->
 
-    <div class="content">
+<section id="landing" class="screen">
 
-        <p class="small">
-            For
-        </p>
+<div class="content">
 
-        <h1>
-            Kat 🌷
-        </h1>
+<p class="small fade delay1">FOR</p>
 
-        <p class="message">
-            I made something for you.
-        </p>
+<h1 class="fade delay2">Kat</h1>
 
-        <p class="message2">
-            Whenever you're ready...
-        </p>
+<p class="message fade delay3">
 
-        <button id="beginButton">
+There's something I'd like to share with you.
 
-            Open
+</p>
 
-        </button>
+<p class="message2 fade delay4">
 
-    </div>
+Whenever you're ready...
 
-</main>
+</p>
+
+<button id="openButton" class="fade delay5">
+
+Open
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ENVELOPE -->
+
+<section id="envelopeScreen" class="screen hidden">
+
+<div class="envelopeContainer">
+
+<div class="envelope">
+
+<div class="flap"></div>
+
+<div class="body"></div>
+
+</div>
+
+<p class="tapText">
+
+Tap the envelope
+
+</p>
+
+</div>
+
+</section>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
