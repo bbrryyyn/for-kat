@@ -1,13 +1,24 @@
-const openBtn = document.getElementById("openBtn");
-
 const landing = document.getElementById("landing");
-
 const envelope = document.getElementById("envelope");
+const letter = document.getElementById("letter");
 
-openBtn.addEventListener("click",function(){
+const openBtn = document.getElementById("openBtn");
+const seal = document.getElementById("seal");
 
-landing.style.display="none";
+// Open landing
+openBtn.addEventListener("click", function(){
 
-envelope.style.display="flex";
+    landing.style.display = "none";
+
+    envelope.style.display = "flex";
+
+});
+
+// Open envelope
+seal.addEventListener("click", function(){
+
+    envelope.style.display = "none";
+
+    letter.style.display = "flex";
 
 });
