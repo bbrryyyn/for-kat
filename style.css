@@ -150,20 +150,21 @@ transform:translateX(-50%) scale(1.08);
 .letter{
 position:absolute;
 left:50%;
-bottom:18px;
+bottom:25px;
 transform:translateX(-50%);
-width:290px;
+width:300px;
 height:0;
-overflow:hidden;
-transition:1.2s;
-z-index:3;
+overflow:visible;
+transition:1.2s ease;
+z-index:2;
 }
 
 .paper{
 background:#fffdf8;
-border-radius:8px;
-padding:30px;
-box-shadow:0 12px 40px rgba(0,0,0,.15);
+border-radius:10px;
+padding:35px;
+box-shadow:0 18px 40px rgba(0,0,0,.15);
+min-height:620px;
 }
 
 .letter-content{
@@ -199,8 +200,8 @@ transform:rotateX(180deg);
 }
 
 .open .letter{
-height:520px;
-bottom:70px;
+height:650px;
+bottom:120px;
 }
 
 .open .letter-content{
@@ -217,4 +218,7 @@ font-size:62px;
 transform:scale(.82);
 }
 
+}
+.envelope{
+overflow:visible;
 }
