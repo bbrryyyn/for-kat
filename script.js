@@ -1,5 +1,5 @@
 const openBtn = document.getElementById("openBtn");
 
-openBtn.addEventListener("click", function () {
+openBtn.addEventListener("click", () => {
     alert("It works! 🎉");
 });
